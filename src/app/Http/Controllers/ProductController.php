@@ -6,13 +6,26 @@ use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
-    protected $xmlFeedService;
+    /**
+     * @var XmlFeedService
+     */
+    protected XmlFeedService $xmlFeedService;
 
+    /**
+     * Constructor to initialize the XML feed service.
+     *
+     * @param XmlFeedService $xmlFeedService
+     */
     public function __construct(XmlFeedService $xmlFeedService)
     {
         $this->xmlFeedService = $xmlFeedService;
     }
 
+    /**
+     * Generate and return an XML feed of products.
+     *
+     * @return Response
+     */
     public function generateXmlFeed(): Response
     {
         $xmlContent = $this->xmlFeedService->generateXmlFeed();

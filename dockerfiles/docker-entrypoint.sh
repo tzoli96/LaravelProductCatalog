@@ -16,8 +16,8 @@ fi
 # Run the artisan migrate command
 php artisan migrate --force
 
-# Run the artisan seed command to seed the database
-php artisan db:seed --force
+# Run the artisan test command to test the application.
+php artisan test
 
 # Call the default command
 exec "$@"

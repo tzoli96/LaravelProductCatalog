@@ -6,6 +6,11 @@ use SimpleXMLElement;
 
 class XmlFeedService
 {
+    /**
+     * Generates an XML feed from products and their categories.
+     *
+     * @return string
+     */
     public function generateXmlFeed(): string
     {
         $products = Product::with('categories')->get();
